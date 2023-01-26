@@ -32,7 +32,7 @@ def funcsieve():  # error somewhere
             if Num % 10 == 5:
                 continue
         for primeNum in primeNumsArr:
-            if primeNum * primeNum - 1 < Num:  # error is here
+            if primeNum * primeNum < Num:
                 continue
             if Num % primeNum == 0:
                 isPrime = False
