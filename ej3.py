@@ -22,11 +22,11 @@ def eratosthenes_sieve(N):  # error
     print(prime_nums_arr)
 
 
-def funcsieve():
+def funcsieve(): # error somewhere
     # 600851475143
-    primeNumsArr = [2]
+    primeNumsArr = [2, 3, 5, 7]
     # print(end="[")
-    for Num in range(3, 10000, 2):
+    for Num in range(11, 10000, 2):
         isPrime = True
         if Num > 10:
             if Num % 10 == 5:
@@ -49,12 +49,25 @@ def funcsieve():
 
 # eratosthenes_sieve(600851475143)
 
-num = 600851475143
-simplenumA = funcsieve()
-while True:
-    temp = simplenumA.pop(len(simplenumA)-1)
-    if num % temp == 0:
-        print("Answear:", temp)
-        break
+def do():
+    num = 600851475143
+    simplenumA = funcsieve()
+    while True:
+        temp = simplenumA.pop(len(simplenumA) - 1)
+        if num % temp == 0:
+            print("Answear:", temp)
+            break
 
-    # print("deleted", temp)
+        # print("deleted", temp)
+
+
+# do()
+
+num = 600851475143
+count = 1
+while num != 1:
+    count += 1
+    if num % count == 0:
+        num /= count
+
+print(count)
