@@ -31,7 +31,7 @@ def funcsieve():  # error somewhere
         if Num > 10:
             if Num % 10 == 5:
                 continue
-        for primeNum in primeNumsArr:
+        for primeNum in primeNumsArr:   # still error:) 27..
             if primeNum * primeNum < Num:
                 continue
             if Num % primeNum == 0:
