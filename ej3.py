@@ -22,7 +22,7 @@ def eratosthenes_sieve(N):  # error
     print(prime_nums_arr)
 
 
-def funcsieve(): # error somewhere
+def funcsieve():  # error somewhere
     # 600851475143
     primeNumsArr = [2, 3, 5, 7]
     # print(end="[")
@@ -32,7 +32,7 @@ def funcsieve(): # error somewhere
             if Num % 10 == 5:
                 continue
         for primeNum in primeNumsArr:
-            if primeNum * primeNum - 1 < Num:
+            if primeNum * primeNum - 1 < Num:  # error is here
                 continue
             if Num % primeNum == 0:
                 isPrime = False
@@ -62,6 +62,7 @@ def do():
 
 
 do()
+
 
 def alternative():
     num = 600851475143
