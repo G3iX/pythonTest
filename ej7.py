@@ -21,7 +21,7 @@ def Optimusprime():
             if Num % 2 == 0:
                 continue
         for primeNum in primeNumsArr:
-            if primeNum * primeNum * primeNum < Num:  # я в притул помилки не бачу, тому бахнув милиці:) Хай тут посидить потім, може побачу що
+            if primeNum * primeNum * primeNum < Num:  # я в притул помилки не бачу, тому бахнув милиці:) Хай тут посидять. Потім, може побачу що
                 continue
             if Num % primeNum == 0:
                 isPrime = False
@@ -46,13 +46,13 @@ def falseprimecheck(num):
 
 
 def check():
-    sus = Optimusprime()
+
     error = []
     for i in sus:
         if falseprimecheck(i):
             error.append(i)
 
-
+sus = Optimusprime()
 print(len(sus))
 print(max(sus))
 # print("------")
