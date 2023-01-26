@@ -61,13 +61,14 @@ def do():
         # print("deleted", temp)
 
 
-# do()
+do()
 
-num = 600851475143
-count = 1
-while num != 1:
-    count += 1
-    if num % count == 0:
-        num /= count
+def alternative():
+    num = 600851475143
+    count = 1
+    while num != 1:
+        count += 1
+        if num % count == 0:
+            num /= count
 
-print(count)
+    print(count)
