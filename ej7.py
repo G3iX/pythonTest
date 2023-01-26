@@ -1,67 +1,59 @@
-import collections
+# 10001st prime
+# 104743
 
-magazine = "asd"
-# print([*magazine])
+def Optimusprime():
+    primeNumsArr = [2]
+    for Num in range(3, 105000, 2):
+        isPrime = True
+        if Num > 19:
+            if Num % 17 == 0:
+                continue
+            if Num % 13 == 0:
+                continue
+            if Num % 11 == 0:
+                continue
+            if Num % 10 == 5:
+                continue
+            if Num % 7 == 0:
+                continue
+            if Num % 3 == 0:
+                continue
+            if Num % 2 == 0:
+                continue
+        for primeNum in primeNumsArr:
+            if primeNum * primeNum * primeNum < Num:  # я в притул помилки не бачу, тому бахнув милиці:) Хай тут посидить потім, може побачу що
+                continue
+            if Num % primeNum == 0:
+                isPrime = False
+                break
+        if isPrime:
+            primeNumsArr.append(Num)
+        if len(primeNumsArr) >= 10001:
+            return primeNumsArr
+    return primeNumsArr
 
-ransomNote = collections.Counter(magazine)
-# print(ransomNote)
-# = [*magazine]
 
-# adoda = ransomNote.pop(0)
-# print(adoda)
-
-
-# string = "geeks"
-# print([*string])
-def das():
-    mg = [*magazine]
-    rn = [*ransomNote]
-    if len(mg) < len(rn):
-        return False
-    else:  # len(mg) >= len(rn)
-        for i in range(len(mg) - 1):
-            while len(rn) > 0:
-                if rn[i] == mg[i]:
-                    rn.pop(i)
-                    mg.pop(i)
-                    if (len(rn)) == 0:
-                        return True
-                    # return False
-                else:
-                    break
-        return False
-
-
-def Construct(ransomNote, magazine):
-    rm = collections.Counter(ransomNote)
-    mg = collections.Counter(magazine)
-
-    for leter_char, letter_amount in rm.items():
-        if leter_char not in mg or mg[leter_char] < letter_amount:
+def falseprimecheck(num):
+    if num > 1:
+        for i in range(2, int(num / 2) + 1):
+            if (num % i) == 0:
+                return True
+                break
+        else:
             return False
-
-    return True
-
-
-print(Construct("baa", "aab"))
-
-def canCon(ransomNote, magazine):
-    mg = [*magazine]
-    rn = [*ransomNote]
-    if len(mg) < len(rn):
-        return False
     else:
-        for i in range(len(rn)):
-            if rn[i] == mg[i]:
-                rn.pop(i)
-                mg.pop(i)
-                if len(rn) == 0:
-                    return True
-            #else:
+        return True
 
-# print(canCon("aa", "aa"))
-# print(canCon("aa", "aab"))
-# print(canCon("aa", "ab"))
 
-# print(canCon("a", "b"))
-# print(canCon("baa", "aab"))
+def check():
+    sus = Optimusprime()
+    error = []
+    for i in sus:
+        if falseprimecheck(i):
+            error.append(i)
+
+
+print(len(sus))
+print(max(sus))
+# print("------")
+# print(error)
