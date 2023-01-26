@@ -31,7 +31,7 @@ def funcsieve():  # error somewhere
         if Num > 10:
             if Num % 10 == 5:
                 continue
-        for primeNum in primeNumsArr:   # still error:) 27..
+        for primeNum in primeNumsArr:  # still error:) 27..
             if primeNum * primeNum < Num:
                 continue
             if Num % primeNum == 0:
@@ -44,6 +44,38 @@ def funcsieve():  # error somewhere
     # for i in range(6):
     #     primeNumsArr.pop(0)
     print(primeNumsArr)  # max(
+    return primeNumsArr
+
+
+def NOerrorbutslower():
+    primeNumsArr = [2]
+    for Num in range(3, 105000, 2):
+        isPrime = True
+        if Num > 19:
+            if Num % 17 == 0:
+                continue
+            if Num % 13 == 0:
+                continue
+            if Num % 11 == 0:
+                continue
+            if Num % 10 == 5:
+                continue
+            if Num % 7 == 0:
+                continue
+            if Num % 3 == 0:
+                continue
+            if Num % 2 == 0:
+                continue
+        for primeNum in primeNumsArr:
+            if primeNum * primeNum * primeNum < Num:
+                continue
+            if Num % primeNum == 0:
+                isPrime = False
+                break
+        if isPrime:
+            primeNumsArr.append(Num)
+        if len(primeNumsArr) >= 10001:
+            return primeNumsArr
     return primeNumsArr
 
 
